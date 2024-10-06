@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class DestroyPotion : MonoBehaviour
@@ -10,7 +9,7 @@ public class DestroyPotion : MonoBehaviour
         // Check if the object that collided is a potion
         if (collision.gameObject.CompareTag("Potion")) 
         {
-            // Destroy the object after it collides with the basket
+            // Destroy the potion after it collides with the basket
             Destroy(collision.gameObject);
         }
     }

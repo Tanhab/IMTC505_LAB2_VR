@@ -1,11 +1,12 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class RecipeMaker : MonoBehaviour
 {   
-    public Slider mySlider;
+    [FormerlySerializedAs("mySlider")] public Slider waterAmountSlider;
     public Toggle toggle;
     public Button increaseCoffeeButton;
     public Button decreaseCoffeeButton;
@@ -24,7 +25,7 @@ public class RecipeMaker : MonoBehaviour
     
     void Start()
     {
-        mySlider.onValueChanged.AddListener(OnSliderValueChanged);
+        waterAmountSlider.onValueChanged.AddListener(OnSliderValueChanged);
         toggle.onValueChanged.AddListener(OnToggleValueChanged);
         increaseCoffeeButton.onClick.AddListener(IncreaseCoffee);
         decreaseCoffeeButton.onClick.AddListener(DecreaseCoffee);
@@ -92,11 +93,5 @@ public class RecipeMaker : MonoBehaviour
     {
         _sliderValue = arg0;
         waterText.text = $"Use Sliders for amount of Water\nCurrent Amount - {_sliderValue} Cup";
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
